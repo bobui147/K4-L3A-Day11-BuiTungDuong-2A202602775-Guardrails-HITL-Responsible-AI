@@ -354,6 +354,7 @@ def write_run_attack_json(
                 "name": r.get("name") or r.get("category"),
                 "category": r.get("category"),
                 "input": r.get("input"),
+                "response": r.get("response") or "",
                 "response_preview": (r.get("response_preview") or "")[:300],
                 "leaked": bool(r.get("leaked")),
                 "blocked_input": bool(r.get("blocked_input")),

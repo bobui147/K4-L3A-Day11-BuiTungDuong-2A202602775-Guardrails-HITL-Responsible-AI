@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T07:36:06.749313+00:00",
+  "generated_at": "2026-09-26T07:48:04.845849+00:00",
   "submission_dir": "C:\\Users\\Admin\\Documents\\GitHub\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI",
   "technical_failure": false,
   "packaging": {
@@ -47,7 +47,7 @@
   },
   "public_tests": {
     "returncode": 0,
-    "stdout": "..........                                                               [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py:469\n  C:\\Users\\Admin\\Documents\\GitHub\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py:469: PytestCacheWarning: could not create cache path C:\\Users\\Admin\\Documents\\GitHub\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\.pytest_cache\\v\\cache\\nodeids: [WinError 5] Access is denied: 'C:\\\\Users\\\\Admin\\\\Documents\\\\GitHub\\\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\\\.pytest_cache\\\\v\\\\cache'\n    config.cache.set(\"cache/nodeids\", sorted(self.cached_nodeids))\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n10 passed, 1 warning in 1.33s\n",
+    "stdout": "..........                                                               [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py:469\n  C:\\Users\\Admin\\Documents\\GitHub\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\.venv\\Lib\\site-packages\\_pytest\\cacheprovider.py:469: PytestCacheWarning: could not create cache path C:\\Users\\Admin\\Documents\\GitHub\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\.pytest_cache\\v\\cache\\nodeids: [WinError 5] Access is denied: 'C:\\\\Users\\\\Admin\\\\Documents\\\\GitHub\\\\K4-L3A-Day11-Guardrails-HITL-Responsible-AI\\\\.pytest_cache\\\\v\\\\cache'\n    config.cache.set(\"cache/nodeids\", sorted(self.cached_nodeids))\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n10 passed, 1 warning in 1.61s\n",
     "stderr": "",
     "technical_failure": false
   },

@@ -1,5 +1,17 @@
 # Day 11 — Controlled Agent Security (2026)
 
+**Học viên:** Bùi Tùng Dương · **MSSV:** 2A202602775
+**Repo nộp bài:** `K4-L3-DAY11-BuiTungDuong-2A202602775-Guardrails-HITL-Responsible-AI`
+
+Chạy từ thư mục gốc repo sau khi cài `requirements.txt` và điền API key vào `.env`:
+
+```powershell
+.\.venv\Scripts\python.exe src/main.py --part 2
+.\.venv\Scripts\python.exe src/main.py --part 3
+.\.venv\Scripts\python.exe src/main.py --part 4
+.\.venv\Scripts\python.exe scripts/grade.py --submission-dir . --out outputs/grade_report.json
+```
+
 > 👤 **Hình thức:** bài tập **cá nhân** (1 người / 1 MSSV).  
 > 🎯 **Mục tiêu:** xây **Blue** (phòng thủ), rồi red-team **Red** + **Red Advance**.  
 > ✅ Làm theo **Checkpoint 1 → 5** trong [`CHECKPOINTS.md`](CHECKPOINTS.md) · nộp theo [`SUBMISSION.md`](SUBMISSION.md).

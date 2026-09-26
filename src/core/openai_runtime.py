@@ -45,6 +45,7 @@ class OpenAIRunner:
     client_kwargs: dict = field(default_factory=dict)
     input_hooks: list[Callable[[str], str | None]] = field(default_factory=list)
     output_hooks: list[Callable[[str], str]] = field(default_factory=list)
+    last_model_route: str | None = None
 
     def _client(self):
         from openai import OpenAI
@@ -62,14 +63,28 @@ class OpenAIRunner:
             return block_msg
 
         client = self._client()
-        completion = client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": agent.instruction},
-                {"role": "user", "content": user_message},
-            ],
-            temperature=self.temperature,
-        )
+        messages = [
+            {"role": "system", "content": agent.instruction},
+            {"role": "user", "content": user_message},
+        ]
+        try:
+            completion = client.chat.completions.create(
+                model=self.model, messages=messages, temperature=self.temperature,
+            )
+            self.last_model_route = self.model
+        except Exception as exc:
+            # OpenRouter may expose the same fixed Liquid model only through
+            # its free route. Retry only this exact no-endpoint response.
+            from openai import NotFoundError
+            if not (self.provider == "openrouter" and isinstance(exc, NotFoundError)
+                    and "No endpoints found" in str(exc)
+                    and self.model == "liquid/lfm-2.5-2.6b"):
+                raise
+            route = self.model + ":free"
+            completion = client.chat.completions.create(
+                model=route, messages=messages, temperature=self.temperature,
+            )
+            self.last_model_route = route
         text = (completion.choices[0].message.content or "").strip()
 
         for hook in self.output_hooks:
